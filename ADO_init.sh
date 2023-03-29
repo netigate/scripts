@@ -26,7 +26,7 @@ tar -zxvf $azagent_folder/vstsagent.tar.gz
 
 if [ -x "$(command -v systemctl)" ]
 then
-  ./config.sh --unattended --environment --environmentname $environmentname --acceptteeeula --agent $HOSTNAME --url https://dev.azure.com/netigate/ --work _work --projectname $projectname --auth PAT --token $token --runasservice; sudo ./svc.sh install; sudo ./svc.sh start;
+  ./config.sh --unattended --replace --environment --environmentname $environmentname --acceptteeeula --agent $HOSTNAME --url https://dev.azure.com/netigate/ --work _work --projectname $projectname --auth PAT --token $token --runasservice; sudo ./svc.sh install; sudo ./svc.sh start;
 else
-	./config.sh --unattended --environment --environmentname $environmentname --acceptteeeula --agent $HOSTNAME --url https://dev.azure.com/netigate/ --work _work --projectname $projectname --auth PAT --token $token; ./run.sh;
+	./config.sh --unattended --replace --environment --environmentname $environmentname --acceptteeeula --agent $HOSTNAME --url https://dev.azure.com/netigate/ --work _work --projectname $projectname --auth PAT --token $token; ./run.sh;
 fi
